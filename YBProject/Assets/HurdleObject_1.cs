@@ -12,8 +12,8 @@ public class HurdleObject_1 : MoveEnemyObject
     public BoxCollider Hurdle_Bottom_Collider;
 
     private bool Top = true;
-    float TopYPos = 16;
-    float BottomYPos = -5;
+    float TopYPos = 11;
+    float BottomYPos = -10;
     float SizeX = 1.2f;
     float SizeY = 13;
     public void SetData()
@@ -37,15 +37,15 @@ public class HurdleObject_1 : MoveEnemyObject
         {
             Hurdle_Top.gameObject.SetActive(true);
             Hurdle_Top.transform.localPosition = new Vector3(0, TopYPos - heightRandom, 0);
-            Hurdle_Top_Sprite.size = new Vector2(SizeX + widthRandom, SizeY);
-            Hurdle_Top_Collider.size = new Vector2(SizeX + widthRandom, SizeY);
+            Hurdle_Top_Sprite.size = new Vector2(widthRandom, SizeY);
+            Hurdle_Top_Collider.size = new Vector2(widthRandom, SizeY);
         }
         else
         {
             Hurdle_Bottom.gameObject.SetActive(true);
             Hurdle_Bottom.transform.localPosition = new Vector3(0, BottomYPos + heightRandom, 0);
-            Hurdle_Bottom_Sprite.size = new Vector2(SizeX + widthRandom, SizeY);
-            Hurdle_Bottom_Collider.size = new Vector2(SizeX + widthRandom, SizeY);
+            Hurdle_Bottom_Sprite.size = new Vector2(widthRandom, SizeY);
+            Hurdle_Bottom_Collider.size = new Vector2(widthRandom, SizeY);
         }
     }
 

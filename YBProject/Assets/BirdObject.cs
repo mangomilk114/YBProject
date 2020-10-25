@@ -69,6 +69,6 @@ public class BirdObject : MonoBehaviour
    
     private void OnCollisionEnter(Collision collision)
     {
-        //YBProjectMgr.Instance.GameType = YBProjectMgr.GAME_TYPE.OVER;
+        YBProjectMgr.Instance.GameOver();
     }
 }

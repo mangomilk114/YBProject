@@ -18,11 +18,11 @@ public class YBProjectMgr : MonoBehaviour
         }
     }
 
-    // 새 시작 위치 X
+    // 새 시작 위치 X (0 ~ 4)
     [NonSerialized]
     public float BIRD_START_POS_X = 2f;
 
-    // 새 시작 위치 Y
+    // 새 시작 위치 Y (2 ~ 9)
     [NonSerialized]
     public float BIRD_START_POS_Y = 5f;
 
@@ -51,11 +51,12 @@ public class YBProjectMgr : MonoBehaviour
     public float HURDLE_1_HEIGHT_MAX = 7f;
     [NonSerialized]
     public float HURDLE_1_HEIGHT_MIN = 0f;
-    // 두께
+    // 두께 (1.2 ~ )
     [NonSerialized]
     public float HURDLE_1_WIDTH_MAX = 3f;
     [NonSerialized]       
-    public float HURDLE_1_WIDTH_MIN = 0f;
+    public float HURDLE_1_WIDTH_MIN = 1.2f;
+
     // 생성 간격
     [NonSerialized]
     public float HURDLE_1_GAP_TIME = 1f;
@@ -162,7 +163,7 @@ public class YBProjectMgr : MonoBehaviour
     }
 
 
-
+    public MainScene mMainScene;
     public LandObject mLandObject;
     public BirdObject mBirdObject;
     public HurdleEnemyObject mHurdleEnemyObject;
@@ -185,9 +186,16 @@ public class YBProjectMgr : MonoBehaviour
 
     public void GameStart()
     {
+        mMainScene.GameStart();
         mBirdObject.GameStart();
         mHurdleEnemyObject.GameStart();
         GameType = GAME_TYPE.PLAYING;
+    }
+
+    public void GameOver()
+    {
+        mMainScene.GameOver();
+        GameType = GAME_TYPE.OVER;
     }
 
     public IEnumerator Co_GameUpdate()

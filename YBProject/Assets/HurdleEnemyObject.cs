@@ -25,16 +25,16 @@ public class HurdleEnemyObject : MonoBehaviour
     }
     public void WaveStart()
     {
-        ObjectCreateGapTime = YBProjectMgr.Instance.ENEMY_1_GAP_TIME;
+        ObjectCreateGapTime = YBProjectMgr.Instance.HURDLE_1_GAP_TIME;
     }
     public void UpdateObject()
     {
         if (Time.time > SaveTime + ObjectCreateGapTime)
         {
             SaveTime = Time.time;
-            //HurdleObject_1 obj = Instantiate(mHurdleObject_1, this.transform);
-            //obj.SetData();
-            //MoveObjectList.Add(obj);
+            HurdleObject_1 obj = Instantiate(mHurdleObject_1, this.transform);
+            obj.SetData();
+            MoveObjectList.Add(obj);
 
             //HurdleObject_2 obj = Instantiate(mHurdleObject_2, this.transform);
             //obj.SetData();
@@ -44,9 +44,9 @@ public class HurdleEnemyObject : MonoBehaviour
             //obj.SetData();
             //MoveObjectList.Add(obj);
 
-            EnemyObject_2 obj = Instantiate(mEnemyObject_2, this.transform);
-            obj.SetData();
-            MoveObjectList.Add(obj);
+            //EnemyObject_2 obj = Instantiate(mEnemyObject_2, this.transform);
+            //obj.SetData();
+            //MoveObjectList.Add(obj);
         }
 
         for (int i = 0; i < MoveObjectList.Count; i++)
